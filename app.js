@@ -1,26 +1,58 @@
 const http = require('http');
 const fs = require('fs');
-const path = require('path'); // Import the path module
+const path = require('path');
+
 const port = 3000;
 
-const server = http.createServer(function(req, res){
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    const filePath = path.join(__dirname, 'index.html'); // Get the absolute path to index.html
-    fs.readFile(filePath, function(error, data) {
+const server = http.createServer(function(req, res) {
+    let filePath = '.' + req.url;
+    if (filePath === './') {
+        filePath = './index.html';
+    }
+
+    const extname = path.extname(filePath);
+    let contentType = 'text/html';
+
+    switch (extname) {
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+        case '.json':
+            contentType = 'application/json';
+            break;
+        case '.png':
+            contentType = 'image/png';
+            break;      
+        case '.jpg':
+            contentType = 'image/jpg';
+            break;
+    }
+
+    fs.readFile(filePath, function(error, content) {
         if (error) {
-            res.writeHead(500); // Change status code to 500 for server error
-            res.write('Error: Internal Server Error');
+            if (error.code == 'ENOENT') {
+                fs.readFile('./404.html', function(error, content) {
+                    res.writeHead(404, { 'Content-Type': 'text/html' });
+                    res.end(content, 'utf-8');
+                });
+            } else {
+                res.writeHead(500);
+                res.end('Error: ' + error.code + ' ..\n');
+            }
         } else {
-            res.write(data);
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(content, 'utf-8');
         }
-        res.end(); // Move res.end() outside of the readFile callback
     });
 });
 
-server.listen(port, function(error){
-    if(error){
+server.listen(port, function(error) {
+    if (error) {
         console.log('Something went wrong', error);
     } else {
-        console.log('Server is listening on port '+ port);
+        console.log('Server is listening on port ' + port);
     }
 });
