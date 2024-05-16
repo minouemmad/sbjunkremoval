@@ -15,8 +15,11 @@
         header {
             background-color: #0f9d58; /* Green header */
             color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
+            padding: 20px 20px 20px 40px; /* Add left padding for space */
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            text-align: left;
         }
         .container {
             max-width: 1200px;
@@ -91,11 +94,12 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #0f9d58;
+            background-color: #000000;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px 40px;
+            font-size: 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
             z-index: 9999;
@@ -103,39 +107,58 @@
         .call-now-btn:hover {
             background-color: #086d3d; /* Darker green on hover */
         }
+        .why-choose-us-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .why-choose-us-btn:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>SB Junk Removal</h1>
-        <p>Let us take care of your junk</p>
+        <button class="call-now-btn" onclick="window.location.href='tel:123-456-7890'">Call Now</button>
+        <button class="why-choose-us-btn" onclick="window.location.href='#why-choose-us'">Why Choose Us</button>
+
     </header>
     <div class="banner">
         <h2>Experience hassle-free junk removal with our trusted team</h2>
     </div>
     <div class="container">
         <div class="services-container">
-            <h2>Our Services</h2>
+            <h2>What We Offer</h2>
             <section class="services">
                 <div class="service-item">
                     <a href="service1.html"><img src="https://th.bing.com/th/id/OIP._vA3I-cY0U-NUZL6c42XkAHaE8?rs=1&pid=ImgDetMain" alt="Service 1"></a>
                     <h3><a href="service1.html">Residential Junk Removal</a></h3>
-                    <p>We'll take care of your household junk</p>
+                    
                 </div>
                 <div class="service-item">
                     <a href="service2.html"><img src="https://th.bing.com/th/id/R.ed94e52fffee49149de4c05bf9a53b58?rik=uocdnxRDSIKIqQ&riu=http%3a%2f%2fjunkinthetruckco.com%2fwp-content%2fuploads%2f2022%2f06%2foffice-clean-out-picture.jpg&ehk=m13J6DXOyB4iJC%2bbaNS0cI661qS0xJmsferygZNetqo%3d&risl=&pid=ImgRaw&r=0" alt="Service 2"></a>
                     <h3><a href="service2.html">Commercial Junk Removal</a></h3>
-                    <p>Get rid of your office clutter</p>
+                   
                 </div>
                 <div class="service-item">
                     <a href="service3.html"><img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2022/08/featured-image-junk-removal.jpeg.jpg" alt="Service 3"></a>
                     <h3><a href="service3.html">Construction Debris Removal</a></h3>
-                    <p>Construction site cleanup made easy</p>
+                    
                 </div>
             </section>
         </div>
     </div>
     <footer>
+        <p>24/7 Customer Service</p>
         <p>Contact us: 123-456-7890 | sbjunkremoval@gmail.com</p>
     </footer>
 </body>
