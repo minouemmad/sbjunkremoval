@@ -10,6 +10,17 @@ const server = http.createServer(function(req, res) {
         filePath = './index.html';
     }
 
+    // Add routes for different pages
+    if (filePath === './why-choose-us') {
+        filePath = './why-choose-us.html';
+    } else if (filePath === './services') {
+        filePath = './services.html';
+    } else if (filePath === './pricing') {
+        filePath = './pricing.html';
+    } else if (filePath === './about-us') {
+        filePath = './about-us.html';
+    }
+
     const extname = path.extname(filePath);
     let contentType = 'text/html';
 

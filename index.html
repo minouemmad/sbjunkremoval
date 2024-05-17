@@ -21,13 +21,39 @@
             position: relative;
             text-align: left;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo benslogo {
+            max-height: 40px; /* Adjust as necessary */
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         .banner {
-            background-image: url('https://www.ratgeber-berlin.com/picts/picts-serioese-umzugsunternehmen/serioese-umzugsunternehmen-berlin-header.jpg');
+            background-image: url('');
             background-size: cover;
             height: 400px;
             display: flex;
@@ -36,6 +62,12 @@
             color: #ffffff;
             text-align: center;
             font-size: 24px;
+        }
+        .banner .logo {
+            position: absolute; /* Position the logo absolutely within the banner */
+            bottom: -15%; /* Center vertically */
+            right: 0%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust the position */
         }
         .services-container {
             text-align: center;
@@ -88,7 +120,11 @@
             padding: 20px 0;
         }
         .banner h2 {
-            text-shadow: 5px 5px 8px #000; /* Add outline to the text */
+            font-family: Arial, sans-serif; /* Change font family */
+            font-weight: 900; /* Make text bolder */
+            font-size: 50px; /* Increase font size */
+            color: #ffffff; /* Text color (white) */
+            text-shadow: 2px 2px 4px #000; /* Add text shadow */
         }
         .call-now-btn {
             position: fixed;
@@ -108,10 +144,9 @@
             background-color: #086d3d; /* Darker green on hover */
         }
         .why-choose-us-btn {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: fixed;
+            top: 70px;
+            left: 20px;
             background-color: transparent;
             color: #ffffff;
             padding: 10px 20px;
@@ -123,17 +158,68 @@
         .why-choose-us-btn:hover {
             color: #ffff00; /* Yellow text on hover */
         }
+        .services-btn {
+            position: fixed;
+            top: 70px;
+            left: 180px;
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .serivces-btn:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
+        .pricing-btn {
+            position: fixed;
+            top: 70px;
+            left: 270px;
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .pricing-btn:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
+        .about-btn {
+            position: fixed;
+            top: 70px;
+            left: 340px;
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .about-btn:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>SB Junk Removal</h1>
         <button class="call-now-btn" onclick="window.location.href='tel:123-456-7890'">Call Now</button>
-        <button class="why-choose-us-btn" onclick="window.location.href='#why-choose-us'">Why Choose Us</button>
+        <button class="why-choose-us-btn" onclick="window.location.href='/why-choose-us'">Why Choose Us</button>
+        <button class="services-btn" onclick="window.location.href='/services'">Services</button>
+        <button class="pricing-btn" onclick="window.location.href='/pricing'">Pricing</button>
+        <button class="about-btn" onclick="window.location.href='/about-us'">About Us</button>
 
     </header>
     <div class="banner">
-        <h2>Experience hassle-free junk removal with our trusted team</h2>
+        <div class="logo">
+            <img src="benslogo.jpeg" alt="SB Junk Removal Logo">
+        </div>
+        <h2>Let Us Take Care of Your Junk</h2>
     </div>
     <div class="container">
         <div class="services-container">
@@ -161,5 +247,6 @@
         <p>24/7 Customer Service</p>
         <p>Contact us: 123-456-7890 | sbjunkremoval@gmail.com</p>
     </footer>
+    
 </body>
 </html>
