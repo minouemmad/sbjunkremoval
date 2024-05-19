@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Link to the favicon -->
+    <link rel="icon" href="benslogo.jpeg" type="image/jpeg">
+    <title>Services Offered | SB Junk Removal</title>
+    <style>
+        body {
+            background-color: #f7f9fc; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif; /* Primary font */
+            color: #333; /* Dark gray text color */
+        }
+        header {
+          background-color: #0f9d58; /* Green header */
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button, .more-dropdown button {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-buttons button:hover, .more-dropdown button:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
+        .more-dropdown {
+            position: relative;
+        }
+        .more-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0f9d58;
+            min-width: auto;
+            z-index: 1;
+            top: 100%;
+        }
+        .more-dropdown:hover .more-dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .more-dropdown-content button {
+            display: inline-block;
+            width: auto;
+            text-align: left;
+            padding: 10px 15px;
+            color: #ffffff;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 0;
+        }
+        .more-dropdown-content button:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+            color: #ffffff !important; /* Set title color to white */
+        }
+        .header-title img {
+          max-height: 40px;
+            margin-left: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .service {
+            margin-bottom: 30px; /* Add bottom margin for each service */
+            padding: 20px; /* Add padding */
+            background-color: #ffffff; /* White background for services */
+            border-radius: 5px; /* Add rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        }
+        .service h2 {
+            color: #0f9d58; /* Green heading color */
+            margin-bottom: 10px; /* Add bottom margin for heading */
+        }
+        .service p {
+            margin-bottom: 10px; /* Add bottom margin for paragraphs */
+        }
+        .banner {
+            background-image: url(''); /* Add banner image */
+            background-size: cover;
+            background-position: center;
+            height: 200px; /* Adjust banner height */
+            margin-bottom: 20px; /* Add bottom margin */
+            border-radius: 5px; /* Add rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        }
+        footer {
+            background-color: #0f9d58;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        footer .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .pricing-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-content h2 {
+            font-size: 36px;
+            color: #0f9d58;
+            margin-bottom: 20px;
+        }
+        .pricing-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .pricing-table th {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="benslogo.jpeg" alt="Company Logo">
+            <div class="header-title">
+                <h1>SB Junk Removal</h1>
+            </div>
+        </div>
+        <nav class="nav-buttons">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='services.html'">Services</button>
+            <button onclick="window.location.href='about-us.html'">About Us</button>
+            <button onclick="window.location.href='contact.html'">Contact</button>
+            <div class="more-dropdown">
+                <button>More</button>
+                <div class="more-dropdown-content">
+                    <button onclick="window.location.href='faq.html'">FAQ</button>
+                    <button onclick="window.location.href='reviews.html'">Reviews</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner"></div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h1>Services Offered by SB Junk Removal</h1>
+        
+        <div class="service">
+            <h2>Residential Junk Removal</h2>
+            <p>Our residential junk removal service is designed to make your life easier. Whether you're decluttering your home, renovating, or simply need to get rid of unwanted items, we're here to help. Our team will efficiently remove furniture, appliances, electronics, yard waste, and more. We handle all types of residential junk, big or small.</p>
+        </div>
+
+        <!-- Add more service sections with images, animations, etc. -->
+        <div class="service">
+            <h2>Commercial Junk Removal</h2>
+            <p>Running a business is hard enough without having to worry about junk removal. That's where we come in. Our commercial junk removal service is tailored to meet the needs of businesses of all sizes. Whether you're clearing out office space, retail stores, construction sites, or warehouses, we have the expertise and resources to get the job done quickly and efficiently.</p>
+        </div>
+
+        <div class="service">
+            <h2>Construction Debris Removal</h2>
+            <p>Construction projects can generate a lot of debris, from lumber and drywall to concrete and metal. Our construction debris removal service is perfect for contractors, builders, and homeowners alike. We'll haul away construction waste, clean up the site, and dispose of materials responsibly, leaving you with a clean and safe environment to work in.</p>
+        </div>
+
+        <div class="service">
+            <h2>Appliance and Electronics Removal</h2>
+            <p>Getting rid of old appliances and electronics can be a hassle. That's where we come in. Our appliance and electronics removal service makes it easy to dispose of unwanted items responsibly. Whether you need to get rid of refrigerators, washing machines, TVs, computers, or other electronic devices, we'll pick them up and ensure they're recycled or disposed of properly.</p>
+        </div>
+
+        <div class="service">
+            <h2>Yard Waste Removal</h2>
+            <p>Don't let yard waste pile up in your backyard. Our yard waste removal service can help you clear out branches, leaves, grass clippings, and other organic debris quickly and efficiently. We'll haul away your yard waste and ensure it's disposed of in an eco-friendly manner, leaving your outdoor space clean and tidy.</p>
+        </div>
+
+        <div class="service">
+            <h2>Furniture Removal</h2>
+            <p>Whether you're moving, redecorating, or simply need to get rid of old furniture, our furniture removal service has you covered. We'll take care of lifting, loading, and hauling away your unwanted furniture, including sofas, beds, tables, chairs, and more. Our goal is to make the process as easy and stress-free as possible for you.</p>
+        </div>
+
+        <div class="service">
+            <h2>Apartment Cleanouts</h2>
+            <p>Moving out of an apartment can be overwhelming, especially when it comes to cleaning up. Our apartment cleanout service is designed to simplify the process and ensure you get your security deposit back. We'll remove furniture, appliances, and other items left behind, as well as clean and sanitize the space to meet landlord requirements.</p>
+        </div>
+
+        <div class="service">
+            <h2>Hoarding Cleanouts</h2>
+            <p>Hoarding can create unsafe and unsanitary living conditions, making it essential to address the issue promptly. Our hoarding cleanout service is performed with sensitivity and compassion, ensuring the safety and well-being of everyone involved. We'll work with you to remove clutter, organize belongings, and restore the home to a clean and livable condition.</p>
+        </div>
+
+        <div class="service">
+            <h2>Estate Cleanouts</h2>
+            <p>Dealing with the belongings of a loved one who has passed away can be emotionally and physically exhausting. Our estate cleanout service is designed to help ease the burden during this difficult time. We'll respectfully remove furniture, appliances, personal items, and more, allowing you to focus on what matters most.</p>
+        </div>
+
+        <div class="service">
+            <h2>Garage Cleanouts</h2>
+            <p>Is your garage filled with clutter, making it impossible to park your car or find what you need? Our garage cleanout service can help you reclaim your space. We'll remove old junk, broken appliances, unwanted furniture, and other items cluttering up your garage, leaving you with a clean and organized space.</p>
+        </div>
+
+        <div class="service">
+            <h2>Storage Unit Cleanouts</h2>
+            <p>Are you paying for a storage unit full of stuff you no longer need or want? Our storage unit cleanout service can help you free up space and save money. We'll empty out your storage unit, haul away unwanted items, and ensure everything is disposed of responsibly, allowing you to cancel your storage rental and stop wasting money on unused space.</p>
+        </div>
+        <div class="pricing-content">
+            <h2>Our Pricing</h2>
+            <p>At SB Junk Removal, we believe in transparent and fair pricing. Our prices depend on the volume and type of items you need removed. Below is a general guideline of our pricing:</p>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Residential Junk Removal</td>
+                        <td>Starts at $100</td>
+                    </tr>
+                    <tr>
+                        <td>Commercial Junk Removal</td>
+                        <td>Starts at $150</td>
+                    </tr>
+                    <tr>
+                        <td>Construction Debris Removal</td>
+                        <td>Starts at $200</td>
+                    </tr>
+                    <tr>
+                        <td>Appliance Removal</td>
+                        <td>$75 per item</td>
+                    </tr>
+                    <tr>
+                        <td>Furniture Removal</td>
+                        <td>$50 per item</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>For a detailed estimate, please contact us with a description of the items you need removed, and we'll provide a free onsite estimate with all-inclusive pricing and no hidden fees.</p>
+            <p><strong>Contact us:</strong></p>
+            <ul>
+                <li>Phone: <a href="tel:123-456-7890">123-456-7890</a></li>
+                <li>Email: <a href="mailto:sbjunkremoval@gmail.com">sbjunkremoval@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="/services">Services</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/faq">FAQ</a>
+            <a href="/book-appointment">Book an Appointment</a>
+            <a href="/what-we-offer">What We Offer</a>
+            <a href="/about-us">About Us</a>
+            <a href="/company">Company</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/locations">Locations</a>
+            <a href="/blog">Blog</a>
+            <a href="/careers">Careers</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p>24/7 Customer Service</p>
+        <p>Contact us: 123-456-7890 | sbjunkremoval@gmail.com</p>
+    </footer>
+</body>
+</html>

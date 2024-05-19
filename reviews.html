@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testimonials - SB Junk Removal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Link to the favicon -->
+    <link rel="icon" href="benslogo.jpeg" type="image/jpeg">
+    <!-- Swiper CSS for the image carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            background-color: #ffffff; /* White background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif;
+            color: #333; /* Dark gray text color */
+        }
+        header {
+            background-color: #0f9d58; /* Green header */
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 40px;
+            margin-right: 10px;
+            margin-left: 10px; /* Added margin for spacing */
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button, .more-dropdown button {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            align-items: center;
+            justify-content: center; /* Center align the buttons */
+        }
+        .nav-buttons button:hover, .more-dropdown button:hover {
+            color: #ffff00; /* Yellow text on hover */
+        }
+        .more-dropdown {
+            position: relative;
+        }
+        .more-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0f9d58;
+            min-width: auto;
+            z-index: 1;
+            top: 100%;
+        }
+        .more-dropdown:hover .more-dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .more-dropdown-content button {
+            display: inline-block;
+            width: auto;
+            text-align: left;
+            padding: 10px 15px;
+            color: #ffffff;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 0;
+        }
+        .more-dropdown-content button:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        .call-now-btn {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        .call-now-btn:hover {
+            background-color: #086d3d; /* Darker green on hover */
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+            color: #ffffff !important; /* Set title color to white */
+        }
+        .header-title img {
+            max-height: 40px;
+            margin-left: 10px;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+        }
+        .testimonial-section {
+            margin-top: 20px;
+        }
+        .testimonial {
+            background-color: #f0f8f0; /* Light green background */
+            border: 1px solid #0f9d58; /* Green border */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .testimonial h3 {
+            color: #0f9d58; /* Green heading color */
+            margin-top: 0;
+        }
+        .testimonial p {
+            margin: 10px 0;
+        }
+        .testimonial img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 5px;
+        }
+        .reasons-section {
+            background-color: #e6f7e6; /* Light green background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .reasons-section h2 {
+            color: #0f9d58;
+            text-align: center;
+        }
+        .reasons-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .reasons-list li {
+            padding: 10px;
+            border-bottom: 1px solid #0f9d58;
+        }
+        .reasons-list li:last-child {
+            border-bottom: none;
+        }
+        .google-reviews-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .google-reviews-section h2 {
+            color: #0f9d58;
+            text-align: center;
+        }
+        .google-review {
+            border-bottom: 1px solid #0f9d58;
+            padding: 10px 0;
+        }
+        .google-review:last-child {
+            border-bottom: none;
+        }
+        .google-review p {
+            margin: 5px 0;
+        }
+        .google-review .reviewer {
+            font-weight: bold;
+        }
+        footer {
+            background-color: #0f9d58;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        footer .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="benslogo.jpeg" alt="Company Logo">
+            <div class="header-title">
+                <h1>SB Junk Removal</h1>
+            </div>
+        </div>
+        <nav class="nav-buttons">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='services.html'">Services</button>
+            <button onclick="window.location.href='about-us.html'">About Us</button>
+            <button onclick="window.location.href='contact.html'">Contact</button>
+            <div class="more-dropdown">
+                <button>More</button>
+                <div class="more-dropdown-content">
+                    <button onclick="window.location.href='faq.html'">FAQ</button>
+                    <button onclick="window.location.href='reviews.html'">Reviews</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://example.com/image1.jpg" alt="Customer Testimonials Banner 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://example.com/image2.jpg" alt="Customer Testimonials Banner 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://example.com/image3.jpg" alt="Customer Testimonials Banner 3">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="container">
+        <div class="testimonial-section">
+            <div class="testimonial">
+                <h3>John and Mary Thompson, Des Moines</h3>
+                <p>After years of accumulating old furniture and unused items in our garage, we finally decided it was time to clear it out. SB Junk Removal came to our rescue. They were prompt, professional, and incredibly efficient. What would have taken us weeks to clean up, they managed to do in a single afternoon. Now, our garage is spacious and organized, and we couldn't be happier with the service!</p>
+            </div>
+            <div class="testimonial">
+                <h3>Emily Rogers, Cedar Rapids</h3>
+                <p>As a small business owner, I needed to clear out a lot of old office equipment and junk after moving to a new location. SB Junk Removal was recommended to me, and they did not disappoint. Their team handled everything with care and speed, making the entire process stress-free. Their services allowed me to focus on setting up my new office without worrying about the mess. Thank you, SB Junk Removal!</p>
+            </div>
+            <div class="testimonial">
+                <h3>Michael Brown, Iowa City</h3>
+                <p>We recently completed a home renovation and had a significant amount of construction debris to get rid of. SB Junk Removal was a lifesaver. Their crew arrived on time and cleared out all the debris quickly and efficiently. They even swept up the area after they were done. Our yard is now clean, and we can enjoy our new space without any leftover mess. Highly recommend their service!</p>
+            </div>
+            <div class="testimonial">
+                <h3>Sarah and Tom Wilkins, Davenport</h3>
+                <p>With a growing family, our basement had become a dumping ground for all kinds of stuff. We needed a serious cleanup, and SB Junk Removal was the perfect choice. Their team was courteous and worked diligently to sort, remove, and even donate some of our old items. Our basement is now a usable space for our kids to play, and we are so grateful for their hard work!</p>
+            </div>
+            <div class="testimonial">
+                <h3>Robert Jenkins, Sioux City</h3>
+                <p>Running a small construction company means dealing with a lot of waste materials. I hired SB Junk Removal to help with a particularly messy job site. They handled everything with great care, ensuring that all the debris was properly disposed of. Their efficiency saved us a lot of time and effort. I'll definitely be using their services again for future projects.</p>
+            </div>
+        </div>
+        <div class="reasons-section">
+            <h2>Why Choose SB Junk Removal?</h2>
+            <ul class="reasons-list">
+                <li>Experienced and Professional Team</li>
+                <li>Eco-Friendly Disposal Methods</li>
+                <li>Competitive Pricing</li>
+                <li>Flexible Scheduling Options</li>
+                <li>Fully Licensed and Insured</li>
+                <li>Excellent Customer Service</li>
+                <li>Locally Owned and Operated</li>
+                <li>Commitment to Community and Charity Donations</li>
+                <li>Comprehensive Clean-Up Services</li>
+                <li>Rapid Response Time</li>
+            </ul>
+        </div>
+        <div class="google-reviews-section">
+            <h2>Google Reviews</h2>
+            <div class="google-review">
+                <p class="reviewer">Jessica White</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Fantastic service! Quick, friendly, and very professional. Highly recommend SB Junk Removal for any clean-up needs.</p>
+            </div>
+            <div class="google-review">
+                <p class="reviewer">Mark Taylor</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Excellent experience from start to finish. The team was efficient and courteous. Will definitely use them again.</p>
+            </div>
+            <div class="google-review">
+                <p class="reviewer">Samantha Green</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Very pleased with the service. They handled everything with care and left my space spotless. Great job!</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+            <div class="footer-links">
+                <a href="/services">Services</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/faq">FAQ</a>
+                <a href="/book-appointment">Book an Appointment</a>
+                <a href="/what-we-offer">What We Offer</a>
+                <a href="/about-us">About Us</a>
+                <a href="/company">Company</a>
+                <a href="/reviews">Reviews</a>
+                <a href="/locations">Locations</a>
+                <a href="/blog">Blog</a>
+                <a href="/careers">Careers</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>24/7 Customer Service</p>
+            <p>Contact us: 123-456-7890 | sbjunkremoval@gmail.com</p>
+        </footer>
+    <!-- Swiper JS for the image carousel -->
+    <div style="position: fixed; bottom: 20px; right: 20px;">
+        <a href="tel:+1234567890"><button class="call-now-btn">Call Now!</button></a>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>

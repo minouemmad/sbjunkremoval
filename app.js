@@ -11,14 +11,17 @@ const server = http.createServer(function(req, res) {
     }
 
     // Add routes for different pages
-    if (filePath === './why-choose-us') {
-        filePath = './why-choose-us.html';
+    if (filePath === './reviews') {
+        filePath = './reviews.html';
     } else if (filePath === './services') {
         filePath = './services.html';
-    } else if (filePath === './pricing') {
-        filePath = './pricing.html';
+    
     } else if (filePath === './about-us') {
         filePath = './about-us.html';
+    }
+   
+    else if (filePath === './contact') {
+        filePath = './contact.html';
     }
 
     const extname = path.extname(filePath);
