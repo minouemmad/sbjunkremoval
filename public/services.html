@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="benslogo.png" type="image/jpeg">
+    <title>Services Offered | SB Junk Removal</title>
+    <style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+        background-color: #0f9d58;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container img {
+        max-height: 50px;
+        margin-right: 15px;
+        animation: slideInLeft 1s;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 15px;
+        animation: slideInRight 1s;
+    }
+
+    .nav-buttons a,
+    .more-dropdown button {
+        background: transparent;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .nav-buttons a:hover,
+    .more-dropdown button:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .more-dropdown {
+        position: relative;
+    }
+
+    .more-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #0f9d58;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .more-dropdown:hover .more-dropdown-content {
+        display: block;
+    }
+
+    .more-dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .more-dropdown-content a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .call-now-btn {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        .call-now-btn:hover {
+            background-color: #086d3d; /* Darker green on hover */
+        }
+    .banner {
+        background-image: url('https://th.bing.com/th/id/R.89ce488e17b929b92759f9e8ab1f0bf3?rik=uQEXB%2f2T6PFKKQ&pid=ImgRaw&r=0'); /* Placeholder image */
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner h1 {
+        font-size: 48px;
+        margin: 0;
+        animation: fadeInDown 1s;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .service {
+        background: white;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: fadeInUp 1s;
+        display: flex;
+        align-items: center;
+    }
+
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .service img {
+        max-width: 150px;
+        border-radius: 10px;
+        margin-right: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .service img:hover {
+        transform: scale(1.05);
+    }
+
+    .service h2 {
+        color: #0f9d58;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    .service p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    footer {
+        background-color: #0f9d58;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    footer .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    footer .footer-links a:hover {
+        color: #ffff00;
+    }
+
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="benslogo.png" alt="Company Logo">
+            <h1>Junk Removal</h1>
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="more-dropdown">
+                <button>More</button>
+                <div class="more-dropdown-content">
+                    <a href="faq.html">FAQ</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <h1>Your Junk, Our Responsibility</h1>
+    </div>
+
+    <div class="container">
+        <h1>Services Offered by SB Junk Removal</h1>
+
+        <div class="service">
+            <img src="https://mightyjunk.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-08-at-6.14.16-PM.png" alt="Residential Junk Removal">
+            <div>
+                <h2>Residential Junk Removal</h2>
+                <p>Our residential junk removal service is designed to make your life easier. Whether you're decluttering your home, renovating, or simply need to get rid of unwanted items, we're here to help. Our team will efficiently remove furniture, appliances, electronics, yard waste, and more. We handle all types of residential junk, big or small.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://junkextractors.com/wp-content/uploads/2021/10/Best-Junk-Removal-Services.jpg" alt="Commercial Junk Removal">
+            <div>
+                <h2>Commercial Junk Removal</h2>
+                <p>Running a business is hard enough without having to worry about junk removal. That's where we come in. Our commercial junk removal service is tailored to meet the needs of businesses of all sizes. Whether you're clearing out office space, retail stores, construction sites, or warehouses, we have the expertise and resources to get the job done quickly and efficiently.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="service">
+            <img src="https://elrecogedor.es/wp-content/uploads/2023/05/recogida-de-electrodomesticos-lavadoras-neveras-el-recogedor-2-1024x512.jpg" alt="Appliance and Electronics Removal">
+            <div>
+                <h2>Appliance and Electronics Removal</h2>
+                <p>Getting rid of old appliances and electronics can be a hassle. That's where we come in. Our appliance and electronics removal service makes it easy to dispose of unwanted items responsibly. Whether you need to get rid of refrigerators, washing machines, TVs, computers, or other electronic devices, we'll pick them up and ensure they're recycled or disposed of properly.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://th.bing.com/th/id/OIP.H2PQ76uT1OoQfwN2_B97FwHaE_?rs=1&pid=ImgDetMain" alt="Yard Waste Removal">
+            <div>
+                <h2>Yard Waste Removal</h2>
+                <p>Don't let yard waste pile up in your backyard. Our yard waste removal service can help you clear out branches, leaves, grass clippings, and other organic debris quickly and efficiently. We'll haul away your yard waste and ensure it's disposed of in an eco-friendly manner, leaving your outdoor space clean and tidy.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://www.nilesjunkremoval.com/wp-content/uploads/2020/09/austin-furniture-disposal-with-recycling-furniture-removal.jpg" alt="Furniture Removal">
+            <div>
+                <h2>Furniture Removal</h2>
+                <p>Whether you're moving, redecorating, or simply need to get rid of old furniture, our furniture removal service has you covered. We'll take care of lifting, loading, and hauling away your unwanted furniture, including sofas, beds, tables, chairs, and more. Our goal is to make the process as easy and stress-free as possible for you.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://nixxitjunk.com/wp-content/uploads/2023/05/Apartment-Cleanouts-Challenges-and-Solutions-for-Landlords-and-Tenants-Featured-Image-768x402.png" alt="Apartment Cleanouts">
+            <div>
+                <h2>Apartment Cleanouts</h2>
+                <p>Moving out of an apartment can be overwhelming, especially when it comes to cleaning up. Our apartment cleanout service is designed to simplify the process and ensure you get your security deposit back. We'll remove furniture, appliances, and other items left behind, as well as clean and sanitize the space to meet landlord requirements.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://th.bing.com/th/id/OIP.JfdTOJqbWX4E0dCRjwhdlQHaDV?rs=1&pid=ImgDetMain" alt="Hoarding Cleanouts">
+            <div>
+                <h2>Hoarding Cleanouts</h2>
+                <p>Hoarding can create unsafe and unsanitary living conditions, making it essential to address the issue promptly. Our hoarding cleanout service is performed with sensitivity and compassion, ensuring the safety and well-being of everyone involved. We'll work with you to remove clutter, organize belongings, and restore the home to a clean and livable condition.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://th.bing.com/th/id/OIP.Xr5nRfYJx-J-iklONUAJFwHaE7?rs=1&pid=ImgDetMain" alt="Estate Cleanouts">
+            <div>
+                <h2>Estate Cleanouts</h2>
+                <p>Dealing with the belongings of a loved one who has passed away can be emotionally and physically exhausting. Our estate cleanout service is designed to help ease the burden during this difficult time. We'll respectfully remove furniture, appliances, personal items, and more, allowing you to focus on what matters most.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://completepropertycleanout.com/files/2020/01/garage3.jpg?w=1060&h=795&a=t" alt="Garage Cleanouts">
+            <div>
+                <h2>Garage Cleanouts</h2>
+                <p>Is your garage filled with clutter, making it impossible to park your car or find what you need? Our garage cleanout service can help you reclaim your space. We'll remove old junk, broken appliances, unwanted furniture, and other items cluttering up your garage, leaving you with a clean and organized space.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="https://th.bing.com/th/id/R.ef70171e9f84aedcec7734a2b75c4c01?rik=t2Yrcx5%2fGg5iuQ&pid=ImgRaw&r=0" alt="Storage Unit Cleanouts">
+            <div>
+                <h2>Storage Unit Cleanouts</h2>
+                <p>Are you paying for a storage unit full of stuff you no longer need or want? Our storage unit cleanout service can help you free up space and save money. We'll empty out your storage unit, haul away unwanted items, and ensure everything is disposed of responsibly, allowing you to cancel your storage rental and stop wasting money on unused space.</p>
+            </div>
+        </div>
+
+        
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+        <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
+    </footer>
+    <div style="position: fixed; bottom: 20px; right: 20px;">
+        <a href="tel:+1234567890"><button class="call-now-btn">Call Now!</button></a>
+    </div>
+</body>
+</html>

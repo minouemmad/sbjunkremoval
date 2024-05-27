@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ - SB Junk Removal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Link to the favicon -->
+    <link rel="icon" href="benslogo.png" type="image/jpeg">
+    <!-- Google Fonts for custom fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            background-color: #0f9d58;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            margin-right: 15px;
+            animation: slideInLeft 1s;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            animation: slideInRight 1s;
+        }
+
+        .nav-buttons a,
+        .more-dropdown button {
+            background: transparent;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-buttons a:hover,
+        .more-dropdown button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .more-dropdown {
+            position: relative;
+        }
+
+        .more-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0f9d58;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .more-dropdown:hover .more-dropdown-content {
+            display: block;
+        }
+
+        .more-dropdown-content a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .more-dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .call-now-btn {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        .call-now-btn:hover {
+            background-color: #086d3d; /* Darker green on hover */
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+            color: #ffffff !important;
+            /* Set title color to white */
+        }
+
+        .header-title img {
+            max-height: 40px;
+            margin-left: 10px;
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
+            /* Secondary font */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .faq-container h2 {
+            color: #0f9d58;
+            /* Green heading color */
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e6f7e6;
+            /* Light green border */
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            color: #0f9d58;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item p {
+            display: none;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0 0;
+        }
+
+        .faq-item.open p {
+            display: block;
+        }
+
+        .faq-item h3:after {
+            content: '\002B';
+            /* Plus sign */
+            font-size: 24px;
+        }
+
+        .faq-item.open h3:after {
+            content: '\2212';
+            /* Minus sign */
+        }
+
+        footer {
+            background-color: #0f9d58;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="benslogo.png" alt="Company Logo">
+            <h1>Junk Removal</h1>
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="more-dropdown">
+                <button>More</button>
+                <div class="more-dropdown-content">
+                    <a href="faq.html">FAQ</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What services do you offer?</h3>
+            <p>We offer a wide range of junk removal services including residential cleanouts, commercial cleanouts,
+                construction debris removal, and more. Our team is equipped to handle jobs of all sizes.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I schedule a service?</h3>
+            <p>You can schedule a service by calling us at 319-318-2303, emailing us at sbjunkremoval@gmail.com, or
+                using our online booking system on our website. We offer flexible scheduling options to fit your needs.
+            </p>
+        </div>
+        <div class="faq-item">
+            <h3>What items do you remove?</h3>
+            <p>We remove a variety of items including furniture, appliances, electronics, yard waste, construction
+                debris, and more. If you have specific items in question, please contact us for clarification.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are you eco-friendly?</h3>
+            <p>Yes, we are committed to eco-friendly disposal methods. We recycle and donate items whenever possible to
+                minimize waste and support our community.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are your rates?</h3>
+            <p>Our rates are competitive and depend on the volume and type of items being removed. We provide free,
+                no-obligation quotes. The best quotes are done in person to give you the most accurate estimate.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are you licensed and insured?</h3>
+            <p>Yes, we are fully licensed and insured. Our team is trained to handle your items with care and
+                professionalism.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How soon can you come for a pickup?</h3>
+            <p>We strive to accommodate your schedule as much as possible. Typically, we can schedule a pickup within 24
+                to 48 hours of your request, depending on availability.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do I need to be present for the pickup?</h3>
+            <p>It's preferred but not mandatory. If you won't be present, please ensure that access to the items is
+                arranged and any special instructions are communicated to our team.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you offer same-day services?</h3>
+            <p>Yes, in some cases, we can provide same-day services depending on our availability and your location.
+                Please contact us for inquiries regarding same-day service.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you provide cleanup after removal?</h3>
+            <p>Yes, our team ensures that the area is thoroughly cleaned after the removal process. We leave your space
+                tidy and free of debris.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What areas do you serve?</h3>
+            <p>We serve [Your Location] and surrounding areas. Contact us to confirm if we operate in your area.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept various payment methods including cash, credit/debit cards, and online payments. Please confirm
+                payment options when scheduling your service.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you have size or weight limitations?</h3>
+            <p>While we handle items of all sizes, there may be restrictions on extremely large or heavy items. Contact
+                us with details about your items for clarification.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can you remove hazardous materials?</h3>
+            <p>We do not handle hazardous materials such as chemicals, asbestos, or biohazardous waste. Please dispose
+                of such items properly and safely.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is there anything I need to do before the pickup?</h3>
+            <p>Ensure that the items to be removed are accessible and clear of obstacles. If there are any specific
+                instructions, please inform us in advance.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can you provide a certificate of disposal?</h3>
+            <p>Upon request, we can provide a certificate of disposal for your records, confirming that your items have
+                been responsibly disposed of.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you offer discounts for recurring services?</h3>
+            <p>Yes, we offer discounts for recurring services. Contact us to discuss a customized plan tailored to your
+                needs.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What if I need to cancel or reschedule?</h3>
+            <p>If you need to cancel or reschedule your appointment, please notify us at least 24 hours in advance to
+                avoid any cancellation fees.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can you provide references or testimonials?</h3>
+            <p>Yes, we can provide references or testimonials from satisfied customers upon request. Feel free to ask us
+                for more information.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+        <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
+    </footer>
+    <div style="position: fixed; bottom: 20px; right: 20px;">
+        <a href="tel:+3193182303"><button class="call-now-btn">Call Now!</button></a>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

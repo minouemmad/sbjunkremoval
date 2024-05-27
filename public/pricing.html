@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SB Junk Removal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Link to the favicon -->
+    <link rel="icon" href="benslogo.png" type="image/jpeg">
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            background-color: #0f9d58;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            margin-right: 15px;
+            animation: slideInLeft 1s;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            animation: slideInRight 1s;
+        }
+
+        .nav-buttons a,
+        .more-dropdown button {
+            background: transparent;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-buttons a:hover,
+        .more-dropdown button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .more-dropdown {
+            position: relative;
+        }
+
+        .more-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0f9d58;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .more-dropdown:hover .more-dropdown-content {
+            display: block;
+        }
+
+        .more-dropdown-content a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .more-dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .call-now-btn {
+            background-color: #086d3d;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            animation: fadeInDown 1.5s;
+        }
+
+        .call-now-btn:hover {
+            background-color: #086d3d;
+        }
+
+        .call-now-btn img {
+            margin-right: 10px;
+            height: 30px;
+            width: auto;
+        }
+
+        .pricing-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .pricing-content h2 {
+            font-size: 32px;
+            color: #0f9d58;
+            margin-bottom: 20px;
+        }
+
+        .pricing-content p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .pricing-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pricing-form label {
+            font-size: 18px;
+            color: #0f9d58;
+        }
+
+        .pricing-form input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .pricing-form input[type="number"]:focus {
+            border-color: #0f9d58;
+            box-shadow: 0 0 10px rgba(15, 157, 88, 0.2);
+        }
+
+        .pricing-form input[type="submit"] {
+            background-color: #0f9d58;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pricing-form input[type="submit"]:hover {
+            background-color: #086d3d;
+            transform: scale(1.05);
+        }
+
+        .pricing-result {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        footer .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('pricingForm');
+            const pricingResult = document.getElementById('pricingResult');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const loads = parseFloat(document.getElementById('loads').value) || 0;
+                const loadCost = loads * 100;
+                pricingResult.textContent = `Estimated Price: $${loadCost.toFixed(2)}`;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="benslogo.png" alt="Company Logo">
+            <h1>Junk Removal</h1>
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="more-dropdown">
+                <button>More</button>
+                <div class="more-dropdown-content">
+                    <a href="faq.html">FAQ</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pricing-content">
+        <h2>Estimate Your Pricing</h2>
+        <p>Use our estimator to get an idea of your junk removal costs. Please note that these are estimates and actual pricing may vary based on the specifics of your request.</p>
+        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14301/truck-car-vehicle-clipart-md.png" alt="Truck Image" style="width: 100%; max-width: 600px; display: block; margin: 0 auto 20px;">
+        <form id="pricingForm" class="pricing-form">
+            <label for="loads">Number of 8-foot bed loads:</label>
+            <input type="number" id="loads" name="loads" min="1" required>
+            <input type="submit" value="Calculate Estimate">
+        </form>
+        <div id="pricingResult" class="pricing-result"></div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+        <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
