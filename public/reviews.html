@@ -10,128 +10,99 @@
     <!-- Swiper CSS for the image carousel -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
         }
+        to {
+            opacity: 1;
+        }
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+   
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+    body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+    header {
+        background-color: #8DC63F;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f7f9fc;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            animation: fadeIn 1s ease-in-out;
-        }
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
 
-        header {
-            background-color: #0f9d58;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .logo-container img {
+        max-height: 50px;
+        margin-right: 15px;
+        animation: slideInLeft 1s;
+    }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+    .nav-buttons {
+        display: flex;
+        gap: 15px;
+        animation: slideInRight 1s;
+    }
 
-        .logo-container img {
-            max-height: 50px;
-            margin-right: 15px;
-            animation: slideInLeft 1s;
-        }
+    .nav-buttons a,
+    .more-dropdown button {
+        background: transparent;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
 
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            animation: slideInRight 1s;
-        }
+    .nav-buttons a:hover,
+    .more-dropdown button:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
 
-        .nav-buttons a,
-        .more-dropdown button {
-            background: transparent;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+    .more-dropdown {
+        position: relative;
+    }
 
-        .nav-buttons a:hover,
-        .more-dropdown button:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
+    .more-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #8DC63F;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
 
-        .more-dropdown {
-            position: relative;
-        }
+    .more-dropdown:hover .more-dropdown-content {
+        display: block;
+    }
 
-        .more-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #0f9d58;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
+    .more-dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
 
-        .more-dropdown:hover .more-dropdown-content {
-            display: block;
-        }
+    .more-dropdown-content a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
 
-        .more-dropdown-content a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .more-dropdown-content a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
         .call-now-btn {
             background-color: #000000;
             color: #fff;
@@ -144,113 +115,150 @@
             z-index: 9999;
             transition: background-color 0.3s ease;
         }
+
         .call-now-btn:hover {
             background-color: #086d3d; /* Darker green on hover */
         }
+
         .header-title {
             display: flex;
             align-items: center;
             color: #ffffff !important; /* Set title color to white */
         }
+
         .header-title img {
             max-height: 40px;
             margin-left: 10px;
         }
+
         .swiper-container {
             width: 100%;
-            height: 300px;
+            height: 60vh; /* Set the height to 60% of the viewport height */
             margin-bottom: 20px;
+            position: relative;
         }
+
         .swiper-slide {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .swiper-slide img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
-        .testimonial-section {
-            margin-top: 20px;
+
+        .swiper-pagination {
+            bottom: 10px !important; /* Adjust as needed */
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white; /* Pagination dots color */
         }
+
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #8DC63F;
+            opacity: 1;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-section, .google-reviews-section {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .testimonial {
             background-color: #f0f8f0; /* Light green background */
-            border: 1px solid #0f9d58; /* Green border */
-            border-radius: 5px;
+            border: 1px solid #8DC63F; /* Green border */
+            border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
         }
+
+        .testimonial:hover {
+            transform: translateY(-10px); /* Lift the testimonial */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
         .testimonial h3 {
-            color: #0f9d58; /* Green heading color */
+            color: #8DC63F; /* Green heading color */
             margin-top: 0;
+            font-size: 1.5em;
         }
+
         .testimonial p {
             margin: 10px 0;
+            font-size: 1.1em;
         }
-        .testimonial img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
-            border-radius: 5px;
-        }
-        .reasons-section {
-            background-color: #e6f7e6; /* Light green background */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            animation: slideIn 1s ease-in-out;
-        }
-        .reasons-section h2 {
-            color: #0f9d58;
-            text-align: center;
-        }
-        .reasons-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .reasons-list li {
-            padding: 10px;
-            border-bottom: 1px solid #0f9d58;
-        }
-        .reasons-list li:last-child {
-            border-bottom: none;
-        }
+
         .google-reviews-section {
             background-color: #fff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .google-reviews-section h2 {
-            color: #0f9d58;
             text-align: center;
         }
-        .google-review {
-            border-bottom: 1px solid #0f9d58;
-            padding: 10px 0;
+
+        .google-reviews-section h2 {
+            color: #8DC63F;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
+
+        .google-review {
+            border-bottom: 1px solid #8DC63F;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
         .google-review:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
+
         .google-review p {
             margin: 5px 0;
+            font-size: 1.1em;
         }
+
         .google-review .reviewer {
             font-weight: bold;
+            color: #8DC63F;
         }
+
         footer {
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             color: #ffffff;
             text-align: center;
             padding: 20px 0;
         }
+
         footer .footer-links {
             display: flex;
             flex-wrap: wrap;
@@ -258,25 +266,19 @@
             gap: 20px;
             margin-bottom: 20px;
         }
+
         footer .footer-links a {
             color: #ffffff;
             text-decoration: none;
             font-size: 16px;
         }
+
         footer .footer-links a:hover {
             text-decoration: underline;
         }
+
         footer p {
             margin: 5px 0;
-        }
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -288,14 +290,22 @@
         </div>
         <nav class="nav-buttons">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about-us.html">About Us</a>
             <a href="contact.html">Contact</a>
+            <div class="more-dropdown">
+                <button>Services</button>
+                <div class="more-dropdown-content">
+                    <a href="residential.html">Residential</a>
+                    <a href="commercial.html">Commercial</a>
+                    <a href="forclosure.html">Foreclosure</a>
+                </div>
+            </div>
             <div class="more-dropdown">
                 <button>More</button>
                 <div class="more-dropdown-content">
                     <a href="faq.html">FAQ</a>
                     <a href="reviews.html">Reviews</a>
+                    <a href="pricing.html">Pricing</a>
                 </div>
             </div>
         </nav>
@@ -303,16 +313,15 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="https://example.com/image1.jpg" alt="Customer Testimonials Banner 1">
+                <img src="https://junkluggersofaustin.com/wp-content/uploads/2023/01/local-junk-removal-service.jpg" alt="Customer Testimonials Banner 1">
             </div>
             <div class="swiper-slide">
-                <img src="https://example.com/image2.jpg" alt="Customer Testimonials Banner 2">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://example.com/image3.jpg" alt="Customer Testimonials Banner 3">
+                <img src="https://kineticremoval.com/wp-content/uploads/2021/01/why-hire-professional-junk-removal.jpg" alt="Customer Testimonials Banner 2">
             </div>
         </div>
         <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
     <div class="container">
         <div class="testimonial-section">
@@ -365,12 +374,13 @@
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
             <a href="reviews.html">Reviews</a>
+            <a href="pricing.html">Pricing</a>
         </div>
         <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
     </footer>
     <!-- Swiper JS for the image carousel -->
     <div style="position: fixed; bottom: 20px; right: 20px;">
-        <a href="tel:+1234567890"><button class="call-now-btn">Call Now!</button></a>
+        <a href="tel:+13193182303"><button class="call-now-btn">Call Now!</button></a>
     </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
@@ -380,9 +390,9 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
         });
     </script>

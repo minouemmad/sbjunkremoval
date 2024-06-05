@@ -9,17 +9,7 @@
     <!-- Link to the favicon -->
     <link rel="icon" href="benslogo.png" type="image/jpeg">
     <style>
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -29,28 +19,7 @@
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
+     
         body {
             font-family: 'Raleway', sans-serif;
             background-color: #f7f9fc;
@@ -61,7 +30,7 @@
         }
 
         header {
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -94,7 +63,7 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
@@ -112,7 +81,7 @@
         .more-dropdown-content {
             display: none;
             position: absolute;
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
@@ -170,7 +139,7 @@
 
         .pricing-content h2 {
             font-size: 32px;
-            color: #0f9d58;
+            color: #8DC63F;
             margin-bottom: 20px;
         }
 
@@ -184,11 +153,12 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            animation: fadeIn 2s;
         }
 
         .pricing-form label {
             font-size: 18px;
-            color: #0f9d58;
+            color: #8DC63F;
         }
 
         .pricing-form input[type="number"] {
@@ -202,12 +172,12 @@
         }
 
         .pricing-form input[type="number"]:focus {
-            border-color: #0f9d58;
+            border-color: #8DC63F;
             box-shadow: 0 0 10px rgba(15, 157, 88, 0.2);
         }
 
         .pricing-form input[type="submit"] {
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             color: #fff;
             font-size: 18px;
             cursor: pointer;
@@ -227,29 +197,53 @@
             color: #333;
             font-weight: bold;
             margin-top: 20px;
+            animation: fadeInUp 2s;
         }
 
-        footer p {
-            margin: 5px 0;
+        .additional-costs {
+            font-size: 16px;
+            color: #8DC63F;
+            margin-top: 20px;
+            line-height: 1.6;
+            animation: fadeIn 1.5s;
         }
 
-        footer .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 10px 0;
-        }
+        footer {
+        background-color: #8DC63F;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
 
-        footer .footer-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    footer .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
 
-        footer .footer-links a:hover {
-            text-decoration: underline;
+    footer .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    footer .footer-links a:hover {
+        color: #ffff00;
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
         }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -259,7 +253,18 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
                 const loads = parseFloat(document.getElementById('loads').value) || 0;
-                const loadCost = loads * 100;
+                let loadCost = 0;
+                if (loads === 0.5) {
+                    loadCost = 150;
+                } else if (loads === 1) {
+                    loadCost = 200;
+                } else if (loads === 2) {
+                    loadCost = 330;
+                } else if (loads === 3) {
+                    loadCost = 415;
+                } else if (loads >= 4) {
+                    loadCost = 500;
+                }
                 pricingResult.textContent = `Estimated Price: $${loadCost.toFixed(2)}`;
             });
         });
@@ -274,9 +279,16 @@
         </div>
         <nav class="nav-buttons">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about-us.html">About Us</a>
             <a href="contact.html">Contact</a>
+            <div class="more-dropdown">
+                <button>Services</button>
+                <div class="more-dropdown-content">
+                    <a href="residential.html">Residential</a>
+                    <a href="commercial.html">Commercial</a>
+                    <a href="forclosure.html">Foreclosure</a>
+                </div>
+            </div>
             <div class="more-dropdown">
                 <button>More</button>
                 <div class="more-dropdown-content">
@@ -291,13 +303,21 @@
     <div class="pricing-content">
         <h2>Estimate Your Pricing</h2>
         <p>Use our estimator to get an idea of your junk removal costs. Please note that these are estimates and actual pricing may vary based on the specifics of your request.</p>
+        <p>Minimum (half load): $150</p>
         <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14301/truck-car-vehicle-clipart-md.png" alt="Truck Image" style="width: 100%; max-width: 600px; display: block; margin: 0 auto 20px;">
         <form id="pricingForm" class="pricing-form">
             <label for="loads">Number of 8-foot bed loads:</label>
-            <input type="number" id="loads" name="loads" min="1" required>
+            <input type="number" id="loads" name="loads" min="0.5" step="0.5" required>
             <input type="submit" value="Calculate Estimate">
         </form>
         <div id="pricingResult" class="pricing-result"></div>
+        <div class="additional-costs">
+            <p>Stairs: $20 per flight</p>
+            <p>Appliances: $10 per item</p>
+            <p>Hazardous waste: $50 per 5 gallons</p>
+            <p>Disassembly: $20 per item</p>
+            <p>Heavy weight: $50 per truckload</p>
+        </div>
     </div>
     <footer>
         <div class="footer-links">
@@ -307,6 +327,7 @@
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
             <a href="reviews.html">Reviews</a>
+            <a href="pricing.html">Pricing</a>
         </div>
         <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
     </footer>

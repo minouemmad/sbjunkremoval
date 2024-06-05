@@ -1,9 +1,12 @@
-require('dotenv').config();
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const path = require('path');
+import dotenv from 'dotenv';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import SENDMAIL from './send-email.js';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,62 +15,37 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Nodemailer transporter configuration
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.EMAIL_PASSWORD
-    }
-});
+// Serve static files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Endpoint to handle form submission
 app.post('/submit_form', (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email, subject, message } = req.body;
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: 'maemmad88@gmail.com', // replace with your destination email
+        to: 'maemmad88@gmail.com',
         subject: 'New Contact Form Submission',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+        text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
-            res.status(500).send('Error sending email');
-        } else {
-            console.log('Email sent:', info.response);
-            res.status(200).send('Email sent successfully');
-        }
+    SENDMAIL(mailOptions, (info) => {
+        console.log("Email sent successfully");
+        console.log("MESSAGE ID: ", info.messageId);
+        res.status(200).json({ status: 'success', message: 'Email sent successfully' });
     });
 });
 
-// Serve the updated HTML file
+// Serve the HTML files
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'contact.html'));
-});
-
-app.get('/services', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'services.html'));
-});
-
-app.get('/about-us', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about-us.html'));
-});
-
-app.get('/faq', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'faq.html'));
-});
-
-app.get('/reviews', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'reviews.html'));
 });
 
 // Handle 404 for non-existing routes

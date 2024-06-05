@@ -12,51 +12,18 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap">
     <style>
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
+   
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
+   @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+    
 
         body {
             font-family: 'Raleway', sans-serif;
@@ -68,7 +35,7 @@
         }
 
         header {
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -101,7 +68,7 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
@@ -119,7 +86,7 @@
         .more-dropdown-content {
             display: none;
             position: absolute;
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
@@ -179,7 +146,7 @@
         }
 
         .faq-container h2 {
-            color: #0f9d58;
+            color: #8DC63F;
             /* Green heading color */
             text-align: center;
             font-size: 32px;
@@ -194,7 +161,7 @@
         }
 
         .faq-item h3 {
-            color: #0f9d58;
+            color: #8DC63F;
             margin: 0;
             cursor: pointer;
             display: flex;
@@ -225,7 +192,7 @@
         }
 
         footer {
-            background-color: #0f9d58;
+            background-color: #8DC63F;
             color: #ffffff;
             text-align: center;
             padding: 20px 0;
@@ -268,31 +235,38 @@
 
 <body>
     <header>
-        <div class="logo-container">
-            <img src="benslogo.png" alt="Company Logo">
-            <h1>Junk Removal</h1>
-        </div>
-        <nav class="nav-buttons">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="about-us.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <div class="more-dropdown">
-                <button>More</button>
-                <div class="more-dropdown-content">
-                    <a href="faq.html">FAQ</a>
-                    <a href="reviews.html">Reviews</a>
-                    <a href="pricing.html">Pricing</a>
-                </div>
+            <div class="logo-container">
+                <img src="benslogo.png" alt="Company Logo">
+                <h1>Junk Removal</h1>
             </div>
-        </nav>
+            <nav class="nav-buttons">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <div class="more-dropdown">
+                    <button>Services</button>
+                    <div class="more-dropdown-content">
+                        <a href="residential.html">Residential</a>
+                        <a href="commercial.html">Commercial</a>
+                        <a href="forclosure.html">Foreclosure</a>
+                    </div>
+                </div>
+                <div class="more-dropdown">
+                    <button>More</button>
+                    <div class="more-dropdown-content">
+                        <a href="faq.html">FAQ</a>
+                        <a href="reviews.html">Reviews</a>
+                        <a href="pricing.html">Pricing</a>
+                    </div>
+                </div>
+            </nav>
     </header>
     <div class="faq-container">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>What services do you offer?</h3>
             <p>We offer a wide range of junk removal services including residential cleanouts, commercial cleanouts,
-                construction debris removal, and more. Our team is equipped to handle jobs of all sizes.</p>
+                estate cleanouts, and more. Our team is equipped to handle jobs of all sizes.</p>
         </div>
         <div class="faq-item">
             <h3>How do I schedule a service?</h3>
@@ -322,8 +296,7 @@
         </div>
         <div class="faq-item">
             <h3>How soon can you come for a pickup?</h3>
-            <p>We strive to accommodate your schedule as much as possible. Typically, we can schedule a pickup within 24
-                to 48 hours of your request, depending on availability.</p>
+            <p>We strive to accommodate your schedule as much as possible. Typically, we can schedule a pickup within 12 to 24 of your request, depending on availability.</p>
         </div>
         <div class="faq-item">
             <h3>Do I need to be present for the pickup?</h3>
@@ -343,7 +316,7 @@
         </div>
         <div class="faq-item">
             <h3>What areas do you serve?</h3>
-            <p>We serve [Your Location] and surrounding areas. Contact us to confirm if we operate in your area.</p>
+            <p>We serve Johnson County Iowa and surrounding areas. Contact us to confirm if we operate in your area.</p>
         </div>
         <div class="faq-item">
             <h3>What payment methods do you accept?</h3>
@@ -357,8 +330,7 @@
         </div>
         <div class="faq-item">
             <h3>Can you remove hazardous materials?</h3>
-            <p>We do not handle hazardous materials such as chemicals, asbestos, or biohazardous waste. Please dispose
-                of such items properly and safely.</p>
+            <p>Yes, we can handle hazardous materials such as chemicals, asbestos, or biohazardous waste. However, we charge extra.</p>
         </div>
         <div class="faq-item">
             <h3>Is there anything I need to do before the pickup?</h3>
@@ -395,11 +367,12 @@
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
             <a href="reviews.html">Reviews</a>
+            <a href="pricing.html">Pricing</a>
         </div>
         <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
     </footer>
     <div style="position: fixed; bottom: 20px; right: 20px;">
-        <a href="tel:+3193182303"><button class="call-now-btn">Call Now!</button></a>
+        <a href="tel:+13193182303"><button class="call-now-btn">Call Now!</button></a>
     </div>
     <script>
         document.querySelectorAll('.faq-item h3').forEach(item => {
