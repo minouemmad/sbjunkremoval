@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SB Junk Removal | Professional Junk Removal Services</title>
-    <meta name="description" content="SB Junk Removal offers professional residential and commercial junk removal services. Fast, eco-friendly, and reliable. Call now for same-day service!">
+    <meta name="description"
+        content="SB Junk Removal offers professional residential and commercial junk removal services. Fast, eco-friendly, and reliable. Call now for same-day service!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="benslogo.png" type="image/jpeg">
@@ -15,20 +17,18 @@
         "description": "SB Junk Removal offers professional residential and commercial junk removal services. Fast, eco-friendly, and reliable. Call now for same-day service!",
         "url": "http://www.sbjunkremoval.com",
         "telephone": "+13193182303",
-        "image": "http://www.sbjunkremoval.com/images/sb-junk-removal-logo.png",
-        "logo": "http://www.sbjunkremoval.com/images/sb-junk-removal-logo.png",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "1234 Junk Removal Street",
-            "addressLocality": "Your City",
+            "streetAddress": "3900 Hebl Ave SW",
+            "addressLocality": "Iowa City",
             "addressRegion": "Your State",
-            "postalCode": "12345",
+            "postalCode": "52246",
             "addressCountry": "US"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "34.0522",
-            "longitude": "-118.2437"
+            "latitude": "41.64960",
+            "longitude": "91.62716"
         },
         "openingHours": "Mo-Su 08:00-18:00",
         "priceRange": "$$",
@@ -139,12 +139,13 @@
     </script>
 
 
-<style>
+    <style>
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -155,6 +156,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -165,6 +167,7 @@
                 opacity: 0;
                 transform: translateX(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -176,6 +179,7 @@
                 opacity: 0;
                 transform: translateX(100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -183,13 +187,17 @@
         }
 
         @keyframes bigAnimation {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
         }
+
         body {
             font-family: 'Raleway', sans-serif;
             background-color: #f7f9fc;
@@ -290,7 +298,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        
+
         .more-dropdown {
             position: relative;
         }
@@ -344,51 +352,87 @@
             height: 30px;
             width: auto;
         }
-/* Container for the form providing relative positioning context */
-.form-container {
-    position: relative;                 
-    margin: 0 auto;                     /* Center the form container horizontally */
-    width: 50%;                         /* Adjust the width to 50% for better spacing */
-    height: auto;                       /* Adjust the height to fit content */
-    background-color: rgba(255, 255, 255, 0.8); /* Set a white background with 80% opacity for transparency */
-    padding: 2rem;                      /* Add padding for better spacing inside the container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
-    border-radius: 10px;                /* Add border radius for rounded corners */
-}
 
-/* Styling for the contact form itself */
+     /* Styling for the contact form itself */
 .contact-form {
-    width: 100%;                        /* The form width is 100% of its container */
-    min-height: auto;                   /* Adjust min-height to fit content */
+    width: 90%;
+    /* Increase the width to 90% of its container */
+    max-width: 600px;
+    /* Set a maximum width to prevent it from becoming too wide */
+    min-height: auto;
+    /* Adjust min-height to fit content */
+    margin: 0 auto;
+    /* Center the form horizontally */
+    padding: 1rem;
+    /* Add padding for better spacing */
+    background-color: #f5f5f5;
+    /* Light grey background for the form */
+    border-radius: 10px;
+    /* Rounded corners for a nicer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow for a 3D effect */
 }
 
 /* Styling for input fields and textarea within the form */
-input, textarea {
-    width: 100%;                        
-    margin-top: 1rem;                   /* Reduce margin to 1rem for better spacing */
-    border: none;                       
-    border-bottom: 2px solid black;     /* Increase border-bottom width for better visibility */
-    padding: 10px; 
-    font-size: 16px;                    /* Adjust font size for better readability */
-    box-sizing: border-box;             /* Ensure padding and border are included in the element's total width and height */
-    background-color: rgba(255, 255, 255, 0.8); /* Set a white background with 80% opacity for transparency */
+input,
+textarea {
+    width: 100%;
+    margin-top: 1rem;
+    /* Reduce margin to 1rem for better spacing */
+    border: 1px solid #ccc;
+    /* Light grey border for inputs */
+    border-bottom: 3px solid #89bb8c;
+    /* Increase border-bottom width and use the accent color */
+    padding: 10px;
+    font-size: 16px;
+    /* Adjust font size for better readability */
+    box-sizing: border-box;
+    /* Ensure padding and border are included in the element's total width and height */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Set a white background with 90% opacity for transparency */
+    border-radius: 5px;
+    /* Slightly rounded corners for inputs */
+    transition: border-color 0.3s;
+    /* Smooth transition for border color */
+}
+
+/* Styling for input fields and textarea on focus */
+input:focus,
+textarea:focus {
+    border-color: #89bb8c;
+    /* Change border color on focus for better visibility */
+    outline: none;
+    /* Remove default outline */
 }
 
 /* Styling for the submit button */
 .submit {
-    border: 1px solid black;            /* Add a solid border around the submit button */
-    padding: 1rem;                      /* Add padding inside the button for better clickability */
-    text-align: center;                 /* Center the text inside the button */
-    background-color: rgba(255, 255, 255, 0.8); /* Set a white background with 80% opacity for transparency */
-    cursor: pointer;                    /* Change the cursor to a pointer to indicate it's clickable */
-    font-size: 16px;                    /* Adjust font size for better readability */
-    transition: opacity 0.3s, background-color 0.3s; /* Smooth transition for opacity and background color */
+    border: 1px solid #89bb8c;
+    /* Use the accent color for the border */
+    padding: 0.75rem 1.5rem;
+    /* Adjust padding for better clickability */
+    text-align: center;
+    /* Center the text inside the button */
+    background-color: #89bb8c;
+    /* Use the accent color for background */
+    color: white;
+    /* White text color */
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate it's clickable */
+    font-size: 16px;
+    /* Adjust font size for better readability */
+    border-radius: 5px;
+    /* Slightly rounded corners for the button */
+    transition: opacity 0.3s, background-color 0.3s;
+    /* Smooth transition for opacity and background color */
 }
 
 /* Styling for the submit button on hover */
 .submit:hover {
-    opacity: 0.6;                       /* Change the opacity when hovered to give a visual feedback */
-    background-color: rgba(255, 255, 255, 1); /* Set full opacity on hover for the background color */
+    opacity: 0.8;
+    /* Change the opacity when hovered to give a visual feedback */
+    background-color: #78a577;
+    /* Slightly darker shade of the accent color on hover */
 }
 
 
@@ -454,7 +498,7 @@ input, textarea {
             animation: fadeIn 1s;
         }
 
-       
+
 
         .process {
             background-color: #89bb8c;
@@ -522,38 +566,39 @@ input, textarea {
             color: #8DC63F;
         }
 
-        
-    footer {
-        background-color: #8DC63F;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-    }
 
-    footer .footer-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
+        footer {
+            background-color: #8DC63F;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
 
-    footer .footer-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s;
-    }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
 
-    footer .footer-links a:hover {
-        color: #ffff00;
-    }
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: #ffff00;
+        }
 
         @media (max-width: 768px) {
             .service-item {
                 width: calc(50% - 40px);
             }
+
             .process .process-step p {
                 font-size: 16px;
             }
@@ -563,12 +608,14 @@ input, textarea {
             .service-item {
                 width: 100%;
             }
+
             .process .process-step p {
                 font-size: 14px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo-container">
@@ -605,16 +652,17 @@ input, textarea {
             <img src="phonelogo.png" alt="Phone Icon">Call Now: +1 (319) 318-2303
         </button>
         <div class="banner-content">
-    <div class="form-container">
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="submit">Submit</button>
-        </form>
-        <script src="/send-email.js"></script> <!-- Include the script -->
-
-    </div>
+            <div class="form-container">
+                <h2>Contact Us!</h2>
+                <form action="/" class="contact-form">
+                    <input type="text" placeholder="Full Name" name="" id="name"><br>
+                    <input type="text" placeholder="Email" name="" id="email"><br>
+                    <input type="text" placeholder="Zip" name="" id="zip"><br>
+                    <textarea name="" placeholder="Message" id="message" rows="5"></textarea><br>
+                    <input type="submit" id="send-btn" class="submit" value="Send Message">
+                </form>
+            </div>
+            <script src="/js/server.js"></script>
 
         </div>
     </section>
@@ -623,26 +671,28 @@ input, textarea {
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
             <div class="service-item">
-                <img src="https://mightyjunk.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-08-at-6.14.16-PM.png" alt="Residential Junk Removal">
+                <img src="https://mightyjunk.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-08-at-6.14.16-PM.png"
+                    alt="Residential Junk Removal">
                 <h3>Residential Junk Removal</h3>
                 <p>We help you clear out unwanted items from your home quickly and efficiently.</p>
                 <a href="services.html">Learn more</a>
             </div>
             <div class="service-item">
-                <img src="https://th.bing.com/th/id/OIP.QVJ_wZWXffyQN-Zgt13H-QHaFY?rs=1&pid=ImgDetMain" alt="Commercial Junk Removal">
+                <img src="https://th.bing.com/th/id/OIP.QVJ_wZWXffyQN-Zgt13H-QHaFY?rs=1&pid=ImgDetMain"
+                    alt="Commercial Junk Removal">
                 <h3>Commercial Junk Removal</h3>
                 <p>Professional junk removal services for your business or commercial property.</p>
                 <a href="services.html">Learn more</a>
             </div>
             <div class="service-item">
-                <img src="https://th.bing.com/th/id/OIP.vxrNf7POsq3CVSDmgrkwXQHaE6?rs=1&pid=ImgDetMain" alt="Foreclosure Cleanouts">
+                <img src="https://th.bing.com/th/id/OIP.vxrNf7POsq3CVSDmgrkwXQHaE6?rs=1&pid=ImgDetMain"
+                    alt="Foreclosure Cleanouts">
                 <h3>Foreclosure Cleanouts</h3>
                 <p>Complete cleanout services for foreclosures and rental properties.</p>
                 <a href="services.html">Learn more</a>
             </div>
         </div>
     </section>
-    
 
     <section id="process" class="process">
         <h2 class="section-title">Our Simple Process</h2>
@@ -650,21 +700,20 @@ input, textarea {
             <div class="process-step">
                 <img src="phonelogo.png" alt="Contact Us">
                 <h3>Contact Us</h3>
-                <p>Get in touch with us via phone or online form to schedule your junk removal service.</p>
+                <p>Give us a call or fill out our online form to get started.</p>
             </div>
             <div class="process-step">
                 <img src="clock.png" alt="Schedule Appointment">
                 <h3>Schedule Appointment</h3>
-                <p>We'll work with you to find a convenient time for our team to come to your location.</p>
+                <p>Choose a convenient time for our team to visit your location.</p>
             </div>
             <div class="process-step">
-                <img src="garbagetruck.png" alt="We Remove Junk">
-                <h3>We Remove Junk</h3>
-                <p>Our team arrives on time, removes your junk, and ensures your space is clean and clutter-free.</p>
+                <img src="garbagetruck.png" alt="We Do the Rest">
+                <h3>We Do the Rest</h3>
+                <p>Our team will handle all the heavy lifting, sorting, and disposal.</p>
             </div>
         </div>
     </section>
-
     <section id="reviews" class="reviews">
         <h2 class="section-title">What Our Customers Say</h2>
         <div class="reviews-carousel">
@@ -677,29 +726,48 @@ input, textarea {
                 <span class="author">- Colin Smith</span>
             </div>
             <div class="review-item">
-                <p>"Have now used then twice and will continue. Great guys who care about their work. I highly recommend them."</p>
+                <p>"Have now used them twice and will continue. Great guys who care about their work. I highly recommend them."</p>
                 <span class="author">- Kitty Davis</span>
             </div>
             <div class="review-item">
-                <p>"Cleared my garage out so fast!"</p>
+                <p>"Cleared my garage out so fast! They were in and out in no time, leaving me with a clean and organized space. Absolutely fantastic service!"</p>
                 <span class="author">- Bill Benson</span>
             </div>
-            
-
+            <div class="review-item">
+                <p>"I was amazed at how quickly they handled my junk removal. Professional, friendly, and efficient. Will definitely use them again!"</p>
+                <span class="author">- Benjamin Borwn</span>
+            </div>
+            <div class="review-item">
+                <p>"The team did a phenomenal job. They arrived on time, worked quickly, and made sure everything was done to my satisfaction. Highly recommended!"</p>
+                <span class="author">- Mark Johnson</span>
+            </div>
+            <div class="review-item">
+                <p>"Excellent service! They were thorough and left my basement looking great. Very professional and courteous team."</p>
+                <span class="author">- Sarah Lee</span>
+            </div>
         </div>
     </section>
-
+    
     <footer>
         <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about-us.html">About Us</a>
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
             <a href="reviews.html">Reviews</a>
             <a href="pricing.html">Pricing</a>
         </div>
-        <p>&copy; 2024 SB Junk Removal. All rights reserved.</p>
+        <div class="footer-contact">
+            <p>SB Junk Removal</p>
+            <p>Phone: +1 (319) 318-2303</p>
+            <p>Email: iowacityjunkremoval@gmail.com</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/sbjunkremoval" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/sbjunkremoval" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com/sbjunkremoval" target="_blank">Twitter</a>
+        </div>
     </footer>
 </body>
+
 </html>
