@@ -91,13 +91,14 @@
     .more-dropdown:hover .more-dropdown-content {
         display: block;
     }
+    .more-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8DC63F;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 20; /* Add this line */
+}
 
-    .more-dropdown-content a {
-        display: block;
-        padding: 10px 20px;
-        color: white;
-        text-decoration: none;
-    }
 
     .more-dropdown-content a:hover {
         background: rgba(255, 255, 255, 0.1);
@@ -285,7 +286,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="benslogo.png" alt="Company Logo">
+            <img src="/images/benslogo.png" alt="Company Logo">
             <h1>Junk Removal</h1>
         </div>
         <nav class="nav-buttons">
