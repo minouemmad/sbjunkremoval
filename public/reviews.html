@@ -103,7 +103,22 @@
     .more-dropdown-content a:hover {
         background: rgba(255, 255, 255, 0.1);
     }
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .nav-buttons a,
+    .more-dropdown button {
+        padding: 1.5vw 3vw; /* Smaller padding for smaller screens */
+        font-size: 1.8vw; /* Smaller font-size for smaller screens */
+    }
+}
 
+@media (max-width: 480px) {
+    .nav-buttons a,
+    .more-dropdown button {
+        padding: 1vw 2vw; /* Even smaller padding for very small screens */
+        font-size: 1.6vw; /* Even smaller font-size for very small screens */
+    }
+}
         .call-now-btn {
             background-color: #000000;
             color: #fff;
@@ -314,10 +329,10 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="" alt="Customer Testimonials Banner 1">
+                <img src="https://th.bing.com/th/id/R.adb9ad0817279eaa0be7f95b49668479?rik=LYxBG%2bb66zc6Cg&pid=ImgRaw&r=0" alt="Customer Testimonials Banner 1">
             </div>
             <div class="swiper-slide">
-                <img src="" alt="Customer Testimonials Banner 2">
+                <img src="https://th.bing.com/th/id/R.41a8f2116b099273a97f8c90cdcbbfc3?rik=M3Hp6qQpM0FWNA&pid=ImgRaw&r=0" alt="Customer Testimonials Banner 2">
             </div>
         </div>
         <div class="swiper-pagination"></div>

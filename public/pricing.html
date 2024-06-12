@@ -100,6 +100,22 @@
         .more-dropdown-content a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+        /* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .nav-buttons a,
+    .more-dropdown button {
+        padding: 1.5vw 3vw; /* Smaller padding for smaller screens */
+        font-size: 1.8vw; /* Smaller font-size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons a,
+    .more-dropdown button {
+        padding: 1vw 2vw; /* Even smaller padding for very small screens */
+        font-size: 1.6vw; /* Even smaller font-size for very small screens */
+    }
+}
 
         .call-now-btn {
             background-color: #086d3d;
