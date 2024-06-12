@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <!-- Link to the favicon -->
-    <link rel="icon" href="benslogo.png" type="image/jpeg">
+    <link rel="icon" href="/images/benslogo.png" type="image/jpeg">
     <style>
-        
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -19,7 +18,6 @@
             }
         }
 
-     
         body {
             font-family: 'Raleway', sans-serif;
             background-color: #f7f9fc;
@@ -100,22 +98,23 @@
         .more-dropdown-content a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        /* Media queries for smaller screens */
-@media (max-width: 768px) {
-    .nav-buttons a,
-    .more-dropdown button {
-        padding: 1.5vw 3vw; /* Smaller padding for smaller screens */
-        font-size: 1.8vw; /* Smaller font-size for smaller screens */
-    }
-}
 
-@media (max-width: 480px) {
-    .nav-buttons a,
-    .more-dropdown button {
-        padding: 1vw 2vw; /* Even smaller padding for very small screens */
-        font-size: 1.6vw; /* Even smaller font-size for very small screens */
-    }
-}
+        /* Media queries for smaller screens */
+        @media (max-width: 768px) {
+            .nav-buttons a,
+            .more-dropdown button {
+                padding: 1.5vw 3vw;
+                font-size: 1.8vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-buttons a,
+            .more-dropdown button {
+                padding: 1vw 2vw;
+                font-size: 1.6vw;
+            }
+        }
 
         .call-now-btn {
             background-color: #086d3d;
@@ -170,6 +169,7 @@
             flex-direction: column;
             gap: 15px;
             animation: fadeIn 2s;
+            align-items: center;
         }
 
         .pricing-form label {
@@ -185,6 +185,7 @@
             width: 100%;
             transition: all 0.3s ease;
             outline: none;
+            text-align: center;
         }
 
         .pricing-form input[type="number"]:focus {
@@ -192,7 +193,8 @@
             box-shadow: 0 0 10px rgba(15, 157, 88, 0.2);
         }
 
-        .pricing-form input[type="submit"] {
+        .pricing-form input[type="submit"],
+        .pricing-form button {
             background-color: #8DC63F;
             color: #fff;
             font-size: 18px;
@@ -203,72 +205,123 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .pricing-form input[type="submit"]:hover {
+        .pricing-form input[type="submit"]:hover,
+        .pricing-form button:hover {
             background-color: #086d3d;
             transform: scale(1.05);
         }
 
         .pricing-result {
-            font-size: 18px;
+            font-size: 24px;
             color: #333;
             font-weight: bold;
             margin-top: 20px;
             animation: fadeInUp 2s;
         }
 
-        .additional-costs {
-            font-size: 16px;
-            color: #8DC63F;
-            margin-top: 20px;
-            line-height: 1.6;
-            animation: fadeIn 1.5s;
+        .pricing-warning {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         footer {
-        background-color: #8DC63F;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-    }
-
-    footer .footer-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-
-    footer .footer-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s;
-    }
-
-    footer .footer-links a:hover {
-        color: #ffff00;
-    }
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+            background-color: #8DC63F;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
         }
-    }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: #ffff00;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .load-bar-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .load-bar {
+            height: 30px;
+            background-color: #8DC63F;
+            width: 10%; /* Initial width for 0.5 load */
+            transition: width 0.3s ease;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('pricingForm');
             const pricingResult = document.getElementById('pricingResult');
+            const addLoadBtn = document.getElementById('addLoadBtn');
+            const subtractLoadBtn = document.getElementById('subtractLoadBtn');
+            const loadsInput = document.getElementById('loads');
+            const pricingWarning = document.getElementById('pricingWarning');
+            const loadBar = document.getElementById('loadBar');
+
+            addLoadBtn.addEventListener('click', () => {
+                let loads = parseFloat(loadsInput.value) || 0;
+                if (loads < 5) {
+                    loads += (loads >= 1 ? 1 : 0.5);
+                    loadsInput.value = loads;
+                    pricingWarning.textContent = '';
+                } else {
+                    pricingWarning.textContent = 'Maximum of 5 loads allowed.';
+                }
+                updateLoadBar(loads);
+                calculateEstimate(loads);
+            });
+
+            subtractLoadBtn.addEventListener('click', () => {
+                let loads = parseFloat(loadsInput.value) || 0;
+                if (loads > 0.5) {
+                    loads -= (loads > 1 ? 1 : 0.5);
+                    loadsInput.value = loads;
+                    pricingWarning.textContent = '';
+                } else {
+                    pricingWarning.textContent = 'Minimum of 0.5 load allowed.';
+                }
+                updateLoadBar(loads);
+                calculateEstimate(loads);
+            });
 
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
-                const loads = parseFloat(document.getElementById('loads').value) || 0;
+                const loads = parseFloat(loadsInput.value) || 0;
+                calculateEstimate(loads);
+            });
+
+            function calculateEstimate(loads) {
                 let loadCost = 0;
                 if (loads === 0.5) {
                     loadCost = 150;
@@ -282,7 +335,12 @@
                     loadCost = 500;
                 }
                 pricingResult.textContent = `Estimated Price: $${loadCost.toFixed(2)}`;
-            });
+            }
+
+            function updateLoadBar(loads) {
+                const percentage = (loads / 5) * 100;
+                loadBar.style.width = `${percentage}%`;
+            }
         });
     </script>
 </head>
@@ -319,20 +377,22 @@
     <div class="pricing-content">
         <h2>Estimate Your Pricing</h2>
         <p>Use our estimator to get an idea of your junk removal costs. Please note that these are estimates and actual pricing may vary based on the specifics of your request.</p>
-        <p>Minimum (half load): $150</p>
         <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14301/truck-car-vehicle-clipart-md.png" alt="Truck Image" style="width: 100%; max-width: 600px; display: block; margin: 0 auto 20px;">
         <form id="pricingForm" class="pricing-form">
             <label for="loads">Number of 8-foot bed loads:</label>
-            <input type="number" id="loads" name="loads" min="0.5" step="0.5" required>
-            <input type="submit" value="Calculate Estimate">
+            <input type="number" id="loads" name="loads" min="0.5" step="0.5" required readonly value="0.5">
+            <div>
+                <button type="button" id="subtractLoadBtn">- Load</button>
+                <button type="button" id="addLoadBtn">+ Load</button>
+            </div>
         </form>
+        <div class="load-bar-container">
+            <div id="loadBar" class="load-bar"></div>
+        </div>
         <div id="pricingResult" class="pricing-result"></div>
-        <div class="additional-costs">
-            <p>Stairs: $20 per flight</p>
-            <p>Appliances: $10 per item</p>
-            <p>Hazardous waste: $50 per 5 gallons</p>
-            <p>Disassembly: $20 per item</p>
-            <p>Heavy weight: $50 per truckload</p>
+        <div id="pricingWarning" class="pricing-warning"></div>
+        <div class="best-quote-info">
+            <p>For the most accurate and best pricing, we recommend scheduling an in-person quote.</p>
         </div>
     </div>
     <footer>
