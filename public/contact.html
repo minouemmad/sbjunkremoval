@@ -86,11 +86,28 @@
             background: rgba(255, 255, 255, 0.1);
         }
         /* Media queries for smaller screens */
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .logo-container img {
+        max-height: 40px;
+        margin-right: 10px;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }}
+        /* Media queries for smaller screens */
 @media (max-width: 768px) {
     .nav-buttons a,
     .more-dropdown button {
         padding: 1.5vw 3vw; /* Smaller padding for smaller screens */
-        font-size: 1.8vw; /* Smaller font-size for smaller screens */
+        font-size: 3vw; /* Smaller font-size for smaller screens */
     }
 }
 
@@ -98,7 +115,7 @@
     .nav-buttons a,
     .more-dropdown button {
         padding: 1vw 2vw; /* Even smaller padding for very small screens */
-        font-size: 1.6vw; /* Even smaller font-size for very small screens */
+        font-size: 2vw; /* Even smaller font-size for very small screens */
     }
 }
         .call-now-btn {
