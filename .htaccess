@@ -1,0 +1,6 @@
+PassengerAppRoot /home/dh_kqm3h9/sbjunkremoval.net/
+PassengerStartupFile server.js
+
+# Enable Passenger
+PassengerEnabled on
+PassengerAppType node
